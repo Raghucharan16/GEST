@@ -1,0 +1,10 @@
+# configs/diginetica.yaml
+dataset: diginetica
+win_len: 25
+paths:
+  raw: data_raw/diginetica
+  work: data_work/diginetica
+  proc: data_proc/diginetica
+train: {epochs: 10, batch_size: 128, lr: 1e-3, weight_decay: 1e-4}
+model: {d: 128, heads: 2}
+eval: {ks: [5,10,20]}
