@@ -1,0 +1,6 @@
+{
+  "win_len": 25,
+  "min_session_len": 2,
+  "min_item_freq": 5,
+  "dedup_consecutive": true
+}

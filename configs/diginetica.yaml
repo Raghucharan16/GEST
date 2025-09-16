@@ -1,10 +1,11 @@
-# configs/diginetica.yaml
 dataset: diginetica
+paths: {proc: data_processed/diginetica}
 win_len: 25
-paths:
-  raw: data_raw/diginetica
-  work: data_work/diginetica
-  proc: data_proc/diginetica
-train: {epochs: 10, batch_size: 128, lr: 1e-3, weight_decay: 1e-4}
-model: {d: 128, heads: 2}
-eval: {ks: [5,10,20]}
+model: {d: 192, heads: 4, pattern_M: 128}
+train:
+  batch_size: 256
+  epochs: 50
+  patience: 7
+  lr: 0.001
+  weight_decay: 0.01
+  num_neg: 600

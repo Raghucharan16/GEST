@@ -1,10 +1,11 @@
-# configs/yoochoose.yaml
 dataset: yoochoose
+paths: {proc: data_processed/yoochoose}
 win_len: 20
-paths:
-  raw: data_raw/yoochoose
-  work: data_work/yoochoose
-  proc: data_proc/yoochoose
-train: {epochs: 10, batch_size: 128, lr: 1e-3, weight_decay: 1e-4}
-model: {d: 128, heads: 2}
-eval: {ks: [5,10,20]}
+model: {d: 128, heads: 4, pattern_M: 128}
+train:
+  batch_size: 256
+  epochs: 40
+  patience: 6
+  lr: 0.001
+  weight_decay: 0.01
+  num_neg: 600
